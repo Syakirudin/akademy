@@ -74,7 +74,7 @@
 
         <div class="child">
             <img src="image1.jpg" alt="Image 1">
-            <p>Paragraph 1</p>
+            <p>Public Speaking</p>
         </div>
         <div class="child">
             <img src="image2.jpg" alt="Image 2">
