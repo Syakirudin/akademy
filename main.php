@@ -11,9 +11,9 @@
     <div class="navbar">
         <div class="logo">Logo</div>
         <ul class="nav-items">
-            <li class="nav-item"><a class="nav-link" href="#">Child 1</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Child 2</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Child 3</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#programme">Programme</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
         </ul>
     </div>
    
@@ -30,7 +30,7 @@
 
 
     <!-- About Us Section -->
-    <section class="about-us">
+    <section class="about-us" id="about-us">
         <div class="about-us-content">
             <h2 class="section-title">About Us</h2>
             <p>We are a passionate team of educators and professionals dedicated to providing high-quality online learning experiences. Our mission is to empower individuals with knowledge and skills to achieve their goals and aspirations.</p>
@@ -69,7 +69,7 @@
     <!-- Responsive Container -->
 
     <h2 class="section-title">What We Offer</h2>
-    <section class="container">
+    <section class="container" id="programme">
         
 
         <div class="child">
@@ -99,7 +99,7 @@
 </section>
 
     <!-- Contact Form Section -->
-    <section class="contact-form">
+    <section class="contact-form" id="contact-us">
         <h2 class="section-title">Contact Us</h2>
         <form action="#" method="post">
             <div class="form-group">
