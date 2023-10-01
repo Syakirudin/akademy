@@ -112,7 +112,7 @@ header {
 .hero-image {
     background-image: url("./img/public-speaker.jpg");
     background-color: #cccccc;
-    height: 500px;
+    height: 700px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -156,6 +156,7 @@ header {
     background-color: #f9f9f9;
     padding: 50px 0;
     text-align: center;
+    
 }
 
 .feature-item {
@@ -164,11 +165,38 @@ header {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 700px;
 }
 
 .feature-item img {
     max-width: 100%;
     height: auto;
+}
+
+/* .service{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+.service {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .list-offer {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    color: white;
+    padding-left: 70px;
+    padding-right: 20px;
+  }
+
+.about{
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
 }
 
 /* Style the contact form */
