@@ -1,383 +1,218 @@
-/* Primary Color - Blue */
-:root {
-    --primary-color: #0074e4;
+
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
 }
 
-/* Secondary Colors */
-:root {
-    --secondary-color-1: #ff6b6b; /* Red */
-    --secondary-color-2: #6ab04c; /* Green */
-    --secondary-color-3: #f9cb40; /* Yellow */
-    --secondary-color-4: #6d5bf8; /* Purple */
+/* Center everything horizontally and vertically
+html, body, .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* Add styles for header */
+
+/* Navbar styles *//* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
 }
 
-/* Style for the navigation bar */
+/* Navbar styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px;
-    justify-content: space-between; /* Pushes logo and links to opposite sides */
+    padding: 0 20px;
 }
 
-/* Style for the logo */
 .logo {
     font-size: 24px;
     font-weight: bold;
 }
 
-/* Style for the child elements on the left */
-.nav-items {
-    list-style-type: none;
-    padding: 0;
+.nav-links {
+    list-style: none;
     display: flex;
 }
 
-.nav-item {
+.nav-links li {
     margin-right: 20px;
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
 }
 
-/* Style for the links */
-.nav-link {
+.nav-links a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
 }
 
-/* Change the background color on hover */
-.nav-item:hover {
-    background-color: var(--secondary-color-1); /* Change this to the desired secondary color */
+/* Sticky navbar */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: fadeInDown 0.5s;
+    background-color: #333;
+    z-index: 1000;
 }
 
-/* Media query for responsive design */
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Hamburger icon for small screens */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Media query for small screens (e.g., smartphones) */
 @media (max-width: 768px) {
-    .navbar {
+    .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
     }
 
-    .logo {
-        margin-bottom: 10px;
+    .nav-links.active {
+        display: flex;
     }
 
-    .nav-items {
-        margin-top: 10px;
-    }
-
-    .nav-item {
-        margin-right: 0;
-        margin-bottom: 10px;
+    .menu-icon {
+        display: block;
     }
 }
-/* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
 
-/* Hero Section Styles */
+/* Style the hero section */
+/* Hero section styles */
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px;
-    background-color: #0074e4; /* Primary color (blue) */
-    color: #fff;
-    height: 100vh;
-    overflow: hidden; /* Hide the overflow to reveal the image */
+    background-image: url('./img/public-speaker.jpg'); /* Replace 'hero-image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    color: #5f449d;
+    text-align: center;
+    padding: 100px 0;
+    height: max-content;
 }
 
 .hero-content {
-    /* flex: 3;  */
-    padding-right: 20px; /* Adjusted padding for content*/
-    animation: slide-left 1s forwards; /* Animation to slide content from right */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    /* Adjust layout for screens with a maximum width of 768px (typical for mobile) */
-    .hero {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-content {
-        flex: none; /* Reset flex property for content */
-        padding-right: 0; /* Remove right padding */
-        text-align: center; /* Center text for mobile */
-    }
-
-    .hero-image img {
-        max-width: 100%; /* Make the image take full width */
-        float: none; /* Remove the float to stack the image below */
-        margin-right: 0; /* Remove the right margin */
-        margin-bottom: 20px; /* Add margin below the image */
-    }
-}
-
-@keyframes slide-left {
-    from {
-        transform: translateX(100%); /* Start from the right */
-        opacity: 0; /* Start with no opacity */
-    }
-    to {
-        transform: translateX(0); /* End at the normal position */
-        opacity: 1; /* Fully visible */
-    }
-}
-
-.hero-title {
+h1 {
     font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    text-align: center; /* Center the text horizontally */
+    color: whitesmoke;
+    
 }
 
-
-.hero-subtitle {
+p {
     font-size: 18px;
-    margin-bottom: 24px;
-    margin-left: 20px; /* Adjusted margin for subtitle */
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff6b6b; /* Secondary color (red) */
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #d84343; /* Darker shade of red on hover */
-}
-
-.hero-image img {
-    max-width: 50%;
-    float: right;
-    height: auto;
-    margin-right: 20px; /* Adjusted margin for image */
-    animation: slide-right 1s forwards; /* Animation to slide image from right */
-}
-
-@keyframes slide-right {
-    from {
-        transform: translateX(100%); /* Start from the right */
-    }
-    to {
-        transform: translateX(0); /* End at the normal position */
-    }
-}
-
-
-/* About Us Section Styles */
-.about-us {
-    background-color: #f0f0f0;
-    padding: 40px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
-    height: 30vh;
-}
-
-.about-us-content {
-    flex: 1;
-    text-align: left;
-}
-
-.about-us-image {
-    flex: 1;
-    text-align: right;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .about-us {
-        flex-direction: column; /* Stack content on small screens */
-        text-align: center;
-        padding: 20px;
-    }
-
-    .about-us-content,
-    .about-us-image {
-        flex: 1; /* Reset flex properties for stacking */
-        text-align: center;
-    }
-
-    .about-us-content {
-        margin-bottom: 20px; /* Add spacing between content and image */
-    }
-}
-
-/* ... (continue with other styles) ... */
-
-
-/* TOPIC SECTION */
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Responsive Container Styles */
-/* Container Styles */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center child divs horizontally */
-    align-items: center; /* Center child divs vertically */
-    padding: 20px;
-    height: 100vh;
-}
-
-/* Child Div Styles */
-.child {
-    flex: 0 0 calc(30% - 40px); /* 30% width with 20px padding on both sides */
-    margin: 10px; /* Add margin for spacing between child divs */
-    background-color: #f0f0f0;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.child img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.child p {
-    padding: 0 20px; /* Equal left and right padding within each child div */
-}
-
-
-
-/* ... (continue with other styles) ... */
-
-
-/* QUOTES SECTION */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Section Styles */
-.quotes-section {
-    background-color: #f0f0f0;
-    padding: 40px;
-    text-align: center;
-    height: 20vh;
-}
-
-.section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* Quote Styles */
-.quote-container {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    border-radius: 5px;
-    display: none; /* Initially hide all quotes */
-}
-
-.quote-text {
-    font-size: 18px;
-    font-style: italic;
-}
-
-.quote-author {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Navigation Button Styles */
-.buttons {
     margin-top: 20px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #0074e4;
+/* Style the call to action button */
+.cta-button {
+    display: inline-block;
+    background-color: #ff5722;
     color: #fff;
-    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    margin: 0 10px;
-}
-
-button:hover {
-    background-color: #0057b3;
-}
-
-/* ... (previous CSS styles) ... */
-
-/* Contact Form Styles */
-.contact-form {
-    background-color: #f7f7f7;
-    padding: 40px;
-    border-radius: 5px;
-    margin: 20px auto;
-    max-width: 600px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form .section-title {
-    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
 }
 
-label {
+/* Style the features section */
+.features {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.feature-item {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the contact form */
+.contact {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
     display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
     width: 100%;
+    margin: 10px 0;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.submit-button {
-    background-color: #0074e4;
-    color: #fff;
-    padding: 10px 20px;
     border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    background-color: #ff5722;
+    color: #fff;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.submit-button:hover {
-    background-color: #0057b3;
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
 }
-
-/* ... (continue with other styles) ... */
-

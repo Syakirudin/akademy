@@ -1,28 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const quotes = document.querySelectorAll(".quote-container");
-    let currentQuoteIndex = 0;
-
-    function showQuote(index) {
-        quotes.forEach((quote, i) => {
-            if (i === index) {
-                quote.style.display = "block";
-            } else {
-                quote.style.display = "none";
-            }
-        });
+window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > navbar.offsetHeight) {
+        navbar.classList.add('sticky');
+    } else {
+        navbar.classList.remove('sticky');
     }
+});
 
-    function nextQuote() {
-        currentQuoteIndex++;
-        if (currentQuoteIndex >= quotes.length) {
-            currentQuoteIndex = 0;
-        }
-        showQuote(currentQuoteIndex);
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Auto-advance to the next quote every 5 seconds (adjust as needed)
-    setInterval(nextQuote, 3000);
-
-    // Show the first quote initially
-    showQuote(currentQuoteIndex);
+    menuIcon.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+    });
 });
