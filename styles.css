@@ -109,31 +109,24 @@ header {
 
 /* Style the hero section */
 /* Hero section styles */
-.hero {
-    background-image: url('./img/public-speaker.jpg'); /* Replace 'hero-image.jpg' with your image file */
-    background-size: cover;
+.hero-image {
+    background-image: url("./img/public-speaker.jpg");
+    background-color: #cccccc;
+    height: 500px;
     background-position: center;
-    color: #5f449d;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-text {
     text-align: center;
-    padding: 100px 0;
-    height: max-content;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-h1 {
-    font-size: 36px;
-    color: whitesmoke;
-    
-}
-
-p {
-    font-size: 18px;
-    margin-top: 20px;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
 
 /* Style the call to action button */
 .cta-button {
